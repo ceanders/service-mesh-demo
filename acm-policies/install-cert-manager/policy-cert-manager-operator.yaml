@@ -46,8 +46,8 @@ spec:
               metadata:
                 labels:
                   operators.coreos.com/openshift-cert-manager-operator.cert-manager-operator: ''
-                  name: openshift-cert-manager-operator
-                  namespace: cert-manager-operator
+                name: openshift-cert-manager-operator
+                namespace: cert-manager-operator
               spec:
                channel: stable-v1
                installPlanApproval: Automatic
