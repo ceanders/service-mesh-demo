@@ -34,6 +34,29 @@ spec:
       apiVersion: policy.open-cluster-management.io/v1
       kind: ConfigurationPolicy
       metadata:
+        name: cert-manager-operatorgroup
+      spec:
+        remediationAction: inform
+        severity: high
+        object-templates:
+          - complianceType: musthave
+            objectDefinition:
+              apiVersion: operators.coreos.com/v1
+              kind: OperatorGroup
+              metadata:
+                annotations:
+                  olm.providedAPIs: >-
+                    CertManager.v1alpha1.operator.openshift.io,Certificate.v1.cert-manager.io,CertificateRequest.v1.cert-manager.io,Challenge.v1.acme.cert-manager.io,ClusterIssuer.v1.cert-manager.io,Issuer.v1.cert-manager.io,Order.v1.acme.cert-manager.io
+                generateName: cert-manager-operator-
+                namespace: cert-manager-operator
+              spec:
+                targetNamespaces:
+                  - cert-manager-operator
+                upgradeStrategy: Default
+  - objectDefinition:
+      apiVersion: policy.open-cluster-management.io/v1
+      kind: ConfigurationPolicy
+      metadata:
         name: cert-manager-operator-subscription
       spec:
         remediationAction: inform
