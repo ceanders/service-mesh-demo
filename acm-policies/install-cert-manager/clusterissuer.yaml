@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-cluster-issuer
+spec:
+  acme:
+    email: root@lab.cedricanderson.name
+    preferredChain: ''
+    privateKeySecretRef:
+      name: letsencrypt-cluster-issuer-account-key
+    server: 'https://acme-v02.api.letsencrypt.org/directory'
+    solvers:
+      - dns01:
+          cnameStrategy: None
+          route53:
+            accessKeyIDSecretRef:
+              key: accessKeyID
+              name: aws-access-key
+            hostedZoneID: Z05268051P5HEI8O35K2X
+            region: us-east-1
+            secretAccessKeySecretRef:
+              key: secretAccessKey
+              name: aws-access-key
