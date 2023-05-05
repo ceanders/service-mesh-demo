@@ -237,7 +237,10 @@ spec:
                         outbound:
                           policy: ALLOW_ANY
                   security:
+                    controlPlane:
+                      mtls: true
                     dataPlane:
+                      automtls: true
                       mtls: true
                   telemetry:
                     type: Istiod
