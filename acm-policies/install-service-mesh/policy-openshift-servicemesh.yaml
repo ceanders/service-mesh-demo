@@ -272,7 +272,7 @@ spec:
           pruneObjectBehavior: None
           remediationAction: inform
           severity: high
-  remediationAction: inform
+  remediationAction: enforce
 ---
 apiVersion: policy.open-cluster-management.io/v1
 kind: PlacementBinding
