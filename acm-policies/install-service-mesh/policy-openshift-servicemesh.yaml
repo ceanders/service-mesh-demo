@@ -269,7 +269,7 @@ spec:
                 spec:
                   members:
                     - bookinfo-automtls
-                    - bookinfo-istio
+                    - bookinfo-complete
           pruneObjectBehavior: None
           remediationAction: inform
           severity: high
