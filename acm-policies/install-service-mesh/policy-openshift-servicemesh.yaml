@@ -268,8 +268,8 @@ spec:
                   namespace: istio-system
                 spec:
                   members:
-                    - bookinfo-complete
                     - bookinfo-automtls
+                    - bookinfo-istio
           pruneObjectBehavior: None
           remediationAction: inform
           severity: high
